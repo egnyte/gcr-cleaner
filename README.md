@@ -14,6 +14,9 @@ Running the cloudbuild
 
 `gcloud build submits --substitutions _DAYS_TO_KEEP=10,_TAGS_TO_KEEP=5 .`
 
+## Required Software
+
+You only need gcloud installed and authenticated, script is at least Python3.5+ compatible (but might also work on older 3.x versions of python)
 
 ## Why not other solutions?
 
