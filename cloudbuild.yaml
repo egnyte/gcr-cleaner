@@ -2,5 +2,5 @@ steps:
 - name: 'gcr.io/cloud-builders/gcloud'
   entrypoint: '/bin/bash'
   args:
-    - c
+    - -c
     - ./gcr-cleaner.py --days-to-keep $_DAYS_TO_KEEP --tags-to-keep $_TAGS_TO_KEEP --project $PROJECT_ID --do-it
