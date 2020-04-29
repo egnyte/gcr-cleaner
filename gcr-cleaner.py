@@ -35,16 +35,21 @@ def printable_name(digest):
     return digest["tags"] if len(digest["tags"]) else digest["digest"]
 
 
+def get_json(command):
+    return json.loads(check_output(command.split()).decode("utf-8"))
+
+
 def get_images(repository):
     command = "gcloud container images list --repository %s --format json" % (
         repository
     )
-    return json.loads(check_output(command.split()))
+
+    return get_json(command)
 
 
 def get_digests(image):
     command = "gcloud container images list-tags %s --format json" % (image)
-    return json.loads(check_output(command.split()))
+    return get_json(command)
 
 
 def get_digests_to_delete(digests, image):
